@@ -2,7 +2,6 @@ import legacy from "@vitejs/plugin-legacy"
 import react from "@vitejs/plugin-react"
 import { fileURLToPath } from "url"
 import { defineConfig } from "vite"
-import { ViteFaviconsPlugin } from "vite-plugin-favicon"
 
 // https://vitejs.dev/config/
 export default defineConfig({
