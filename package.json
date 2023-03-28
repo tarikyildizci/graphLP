@@ -8,8 +8,8 @@
   "scripts": {
     "build": "npm run typecheck && vite build",
     "commit": "git-cz",
-    "hak": "vite",
     "format": "prettier . --write --ignore-path .gitignore && git update-index --again",
+    "hak": "vite",
     "lint": "eslint . --ext .ts,.tsx --fix --ignore-path .gitignore",
     "prepare": "husky install",
     "serve": "npm run build && vite preview --port 3000",
@@ -40,14 +40,9 @@
     "@geist-ui/icons": "^1.0.2",
     "@nivo/core": "^0.80.0",
     "@nivo/line": "^0.80.0",
-    "constrained": "^0.2.7",
-    "convex-hull": "^1.0.3",
-    "glpk.js": "^4.0.1",
-    "javascript-lp-solver": "^0.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43.8",
-    "vite-plugin-favicon": "^1.0.8"
+    "react-hook-form": "^7.43.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
