@@ -27,7 +27,6 @@ export const DecisionVariablesForm: React.FC = () => {
         <Grid.Container gap={1} direction="column">
           <Grid>
             <Input
-              disabled
               label="Min"
               width="100%"
               htmlType="number"
@@ -52,7 +51,6 @@ export const DecisionVariablesForm: React.FC = () => {
         <Grid.Container gap={1} direction="column">
           <Grid>
             <Input
-              disabled
               label="Min"
               width="100%"
               htmlType="number"

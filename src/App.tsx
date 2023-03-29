@@ -179,15 +179,18 @@ export default function App() {
                       type="success"
                     >
                       <Text font="1.5rem">
-                        <b>Maximum Value =</b> {maxVal}
+                        <b>Maximum Value =</b>{" "}
+                        {maxVal.toFixed(2)}
                       </Text>
 
                       <Text font="1.5rem">
-                        <b>Optimal X =</b> {optimalX}
+                        <b>Optimal X =</b>{" "}
+                        {optimalX.toFixed(2)}
                       </Text>
 
                       <Text font="1.5rem">
-                        <b>Optimal Y =</b> {optimalY}
+                        <b>Optimal Y =</b>{" "}
+                        {optimalY.toFixed(2)}
                       </Text>
                     </Note>
                   )}

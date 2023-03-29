@@ -20,6 +20,8 @@ type Matrix = number[][]
 
 export function solve(args: SolveProps) {
   const matrix = getMatrixFromValues(args)
+  console.log("matrix")
+  console.table(matrix)
   const results = simplex(structuredClone(matrix))
   const parsedResults = parseResults(results, matrix)
   return parsedResults
@@ -47,20 +49,38 @@ function getMatrixFromValues(args: SolveProps): Matrix {
     row[varLength - 1] = max
     matrix.push(row)
   }
-
+  let indexForSlack = 2 + constraints.length
   if (x.max) {
     const row: Array<number> = new Array(varLength).fill(0)
     row[0] = 1
-    row[2 + constraints.length] = 1
+    row[indexForSlack] = 1
     row[varLength - 1] = x.max
     matrix.push(row)
+    indexForSlack++
   }
   if (y.max) {
     const row: Array<number> = new Array(varLength).fill(0)
     row[1] = 1
-    row[2 + constraints.length + 1] = 1
+    row[indexForSlack] = 1
     row[varLength - 1] = y.max
     matrix.push(row)
+    indexForSlack++
+  }
+  if (x.min) {
+    const row: Array<number> = new Array(varLength).fill(0)
+    row[0] = 1
+    row[indexForSlack] = -1
+    row[varLength - 1] = x.min
+    matrix.push(row)
+    indexForSlack++
+  }
+  if (y.min) {
+    const row: Array<number> = new Array(varLength).fill(0)
+    row[1] = 1
+    row[indexForSlack] = -1
+    row[varLength - 1] = y.min
+    matrix.push(row)
+    indexForSlack++
   }
 
   const objectiveRow: Array<number> =
