@@ -26,7 +26,7 @@ export function solve(args: SolveProps) {
 }
 
 function getMatrixFromValues(args: SolveProps): Matrix {
-  const { constraints, type, x, y } = args
+  const { constraints, x, y } = args
 
   let varLength = 4 + constraints.length
   x.min && varLength++
@@ -38,7 +38,7 @@ function getMatrixFromValues(args: SolveProps): Matrix {
 
   for (let i = 0; i < constraints.length; i++) {
     // TODO: implement min constraint
-    const { max, min, xCoefficient, yCoefficient } =
+    const { max, xCoefficient, yCoefficient } =
       constraints[i]
     const row: Array<number> = new Array(varLength).fill(0)
     row[0] = xCoefficient

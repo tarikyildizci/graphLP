@@ -1,4 +1,3 @@
-import { GraphFormInputs } from "@/types"
 import {
   Card,
   Divider,
@@ -9,16 +8,14 @@ import {
 import React from "react"
 import { useFormContext } from "react-hook-form"
 
-export type DecisionVariablesFormProps = {}
+import { GraphFormInputs } from "@/types"
 
-export const DecisionVariablesForm: React.FC<
-  DecisionVariablesFormProps
-> = () => {
+export const DecisionVariablesForm: React.FC = () => {
   const { register } = useFormContext<GraphFormInputs>()
   return (
     <Card>
       <Card.Content>
-        <Text h3 b>
+        <Text h3 b my={0}>
           Decision Variables
         </Text>
       </Card.Content>
@@ -30,8 +27,10 @@ export const DecisionVariablesForm: React.FC<
         <Grid.Container gap={1} direction="column">
           <Grid>
             <Input
+              disabled
               label="Min"
               width="100%"
+              htmlType="number"
               {...register("xMin")}
             />
           </Grid>
@@ -39,6 +38,7 @@ export const DecisionVariablesForm: React.FC<
             <Input
               label="Max"
               width="100%"
+              htmlType="number"
               {...register("xMax")}
             />
           </Grid>
@@ -52,8 +52,10 @@ export const DecisionVariablesForm: React.FC<
         <Grid.Container gap={1} direction="column">
           <Grid>
             <Input
+              disabled
               label="Min"
               width="100%"
+              htmlType="number"
               {...register("yMin")}
             />
           </Grid>
@@ -61,6 +63,7 @@ export const DecisionVariablesForm: React.FC<
             <Input
               label="Max"
               width="100%"
+              htmlType="number"
               {...register("yMax")}
             />
           </Grid>

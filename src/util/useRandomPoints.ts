@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 
 interface Point {
   x: number
@@ -17,18 +17,18 @@ const generatePolygonPoints = (
 
     // ensure at least one point has an x value of 10
     if (!hasX10 && i === numPoints - 1) {
-      x = 10
+      x = 6
       hasX10 = true
     } else {
-      x = Math.floor(Math.random() * 11) // random x value between 0 and 10
+      x = Math.floor(Math.random() * 7) // random x value between 0 and 10
     }
 
     // ensure at least one point has a y value of 10
     if (!hasY10 && i === numPoints - 2) {
-      y = 10
+      y = 6
       hasY10 = true
     } else {
-      y = Math.floor(Math.random() * 11) // random y value between 0 and 10
+      y = Math.floor(Math.random() * 7) // random y value between 0 and 10
     }
 
     points.push({ x, y })

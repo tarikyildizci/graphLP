@@ -1,4 +1,3 @@
-import { BOUND_TYPE, GraphFormInputs } from "@/types"
 import {
   Button,
   Card,
@@ -7,19 +6,17 @@ import {
   Input,
   Text,
 } from "@geist-ui/core"
+import PlusCircle from "@geist-ui/icons/plusCircle"
+import Trash from "@geist-ui/icons/trash"
 import React, { Fragment } from "react"
 import {
   useFieldArray,
   useFormContext,
 } from "react-hook-form"
-import PlusCircle from "@geist-ui/icons/plusCircle"
-import Trash from "@geist-ui/icons/trash"
 
-export type ConstraintsFormProps = {}
+import { GraphFormInputs } from "@/types"
 
-export const ConstraintsForm: React.FC<
-  ConstraintsFormProps
-> = () => {
+export const ConstraintsForm: React.FC = () => {
   const { control, register } =
     useFormContext<GraphFormInputs>()
   const { fields, remove, prepend } = useFieldArray({
@@ -38,7 +35,7 @@ export const ConstraintsForm: React.FC<
   return (
     <Card>
       <Card.Content>
-        <Text h3 b>
+        <Text h3 b my={0}>
           Constraints
         </Text>
       </Card.Content>
@@ -78,9 +75,9 @@ export const ConstraintsForm: React.FC<
                   <Grid>
                     <Button
                       auto
+                      ghost
                       icon={<Trash />}
                       type="error"
-                      ghost
                       scale={0.75}
                       onClick={() => remove(i)}
                     >
@@ -98,14 +95,14 @@ export const ConstraintsForm: React.FC<
               </Grid>
               <Grid>
                 <Input
-                  label="X Needs"
+                  label="X Coefficient"
                   width="100%"
                   {...register(`constraints.${i}.xNeeds`)}
                 />
               </Grid>
               <Grid>
                 <Input
-                  label="Y Needs"
+                  label="Y Coefficient"
                   width="100%"
                   {...register(`constraints.${i}.yNeeds`)}
                 />

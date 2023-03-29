@@ -8,17 +8,10 @@ import {
 } from "@geist-ui/core"
 import React from "react"
 import { useFormContext } from "react-hook-form"
-import {
-  GraphFormInputs,
-  OBJECTIVE_TYPE,
-  OPERATOR,
-} from "@/types"
 
-export type ObjectiveFunctionFormProps = {}
+import { GraphFormInputs, OBJECTIVE_TYPE } from "@/types"
 
-export const ObjectiveFunctionForm: React.FC<
-  ObjectiveFunctionFormProps
-> = () => {
+export const ObjectiveFunctionForm: React.FC = () => {
   const { register, watch, setValue } =
     useFormContext<GraphFormInputs>()
 
@@ -49,7 +42,7 @@ export const ObjectiveFunctionForm: React.FC<
               {...register("yCoefficent")}
             />
           </Grid>
-          <Grid>
+          {/* <Grid>
             <Text>Operator</Text>
             <Radio.Group
               value={watch("operator")}
@@ -65,21 +58,26 @@ export const ObjectiveFunctionForm: React.FC<
                 <Text my={0}>Minus</Text>
               </Radio>
             </Radio.Group>
-          </Grid>
+          </Grid> */}
           <Grid>
             <Text>Function Type</Text>
             <Radio.Group
+              useRow
               value={watch("type")}
               onChange={val =>
                 setValue("type", val as OBJECTIVE_TYPE)
               }
-              useRow
             >
               <Radio value={OBJECTIVE_TYPE.MAX}>
-                <Text my={0}>{OBJECTIVE_TYPE.MAX}</Text>
+                <Text small my={0}>
+                  {OBJECTIVE_TYPE.MAX}
+                </Text>
               </Radio>
               <Radio disabled value={OBJECTIVE_TYPE.MIN}>
-                <Text my={0}>{OBJECTIVE_TYPE.MIN}</Text>
+                <Text small my={0}>
+                  {OBJECTIVE_TYPE.MIN} (Cannot use this one
+                  for now.)
+                </Text>
               </Radio>
             </Radio.Group>
           </Grid>

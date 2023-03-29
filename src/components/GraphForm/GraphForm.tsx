@@ -1,17 +1,13 @@
+import { Button, Grid, Tabs } from "@geist-ui/core"
+import React from "react"
+import { FormProvider, useForm } from "react-hook-form"
+
 import {
   GraphFormInputs,
   OBJECTIVE_TYPE,
   OPERATOR,
 } from "@/types"
-import {
-  Button,
-  Divider,
-  Fieldset,
-  Grid,
-  Tabs,
-} from "@geist-ui/core"
-import React from "react"
-import { FormProvider, useForm } from "react-hook-form"
+
 import { ConstraintsForm } from "./ConstraintsForm"
 import { DecisionVariablesForm } from "./DecisionVariablesForm"
 import { ObjectiveFunctionForm } from "./ObjectiveFunctionForm"

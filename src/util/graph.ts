@@ -68,7 +68,7 @@ export function getConstraintLines(
   })
   console.log({ maxX, maxY })
   return lines.map(line => {
-    let lineCopy = structuredClone(line)
+    const lineCopy = structuredClone(line)
     if (lineCopy[0].x === null) lineCopy[0].x = maxX
     if (lineCopy[0].y === null) lineCopy[0].y = maxY
     if (lineCopy[1].x === null) lineCopy[1].x = maxX
