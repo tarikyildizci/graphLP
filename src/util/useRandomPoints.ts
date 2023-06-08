@@ -37,19 +37,19 @@ const generatePolygonPoints = (
   return points
 }
 
-const initialPolygonPoints: Point[] =
-  generatePolygonPoints(6)
-
-export const useRandomPoints = () => {
+export const useRandomPoints = (
+  pointCount: number = 15,
+  interval: number = 1000
+) => {
   const [polygonPoints, setPolygonPoints] = useState<
     Point[]
-  >(initialPolygonPoints)
+  >(generatePolygonPoints(pointCount))
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const newPoints = generatePolygonPoints(6)
+      const newPoints = generatePolygonPoints(pointCount)
       setPolygonPoints(newPoints)
-    }, 500)
+    }, interval)
     return () => clearInterval(intervalId)
   }, [])
 

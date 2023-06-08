@@ -48,7 +48,7 @@ export const GraphForm: React.FC<GraphFormProps> = ({
     <FormProvider {...methods}>
       <Grid.Container gap={1} direction="column">
         <Grid>
-          <Tabs initialValue="1">
+          <Tabs initialValue="1" hoverWidthRatio={1}>
             <Tabs.Item label="Decision Variables" value="1">
               <DecisionVariablesForm />
             </Tabs.Item>
